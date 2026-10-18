@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nayeem's Portfolio
 
-## Getting Started
+A personal developer portfolio built with Next.js, React, TypeScript, Tailwind CSS, and Framer Motion. It presents an introduction, skills, selected projects, and contact options.
 
-First, run the development server:
+## Getting started
+
+Use Node.js and npm, then install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contact form configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The contact form uses EmailJS. Create a `.env.local` file in the project root and set the values for your EmailJS account:
 
-## Learn More
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
+```
 
-To learn more about Next.js, take a look at the following resources:
+The EmailJS public key is used by the browser and is not a private credential. Configure allowed origins and abuse protections in EmailJS; never put private credentials in `NEXT_PUBLIC_*` variables.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Available scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Create a production build |
+| `npm run start` | Start the production server |
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Path | Purpose |
+| --- | --- |
+| `app/` | Next.js app layout, home page, and global styles |
+| `components/` | Portfolio sections and shared UI components |
+| `data/` | Project and skills content |
+| `public/` | Static images, project assets, and the downloadable CV |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Public content and deployment
+
+This is a public-facing portfolio. Contact details, profile images, project information, and the CV are included in the site or its static assets and may be accessible to anyone when the site is deployed. Review these materials before changing or redeploying the portfolio. A public GitHub repository also makes its full Git history and committed files visible.
+
+Deploy on a platform that supports Next.js, such as Vercel. Add the EmailJS environment variables to the deployment project's environment configuration before enabling the contact form.

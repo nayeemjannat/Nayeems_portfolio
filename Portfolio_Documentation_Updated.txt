@@ -1,0 +1,1122 @@
+
+
+PORTFOLIO DOCUMENTATION
+
+MD. Jannatul Nayeem
+
+ Next.js   ·   Tailwind CSS   ·   Framer Motion
+
+Complete Step-by-Step Build Guide
+
+13
+
+Sections
+
+6
+
+Technologies
+
+3
+
+Projects
+
+2025
+
+Version
+
+Table of Contents
+
+01 Why Next.js?  —  Tech Stack Decision
+
+02 Colors, Typography, Spacing  —  Design System
+
+03 Folder & File Architecture  —  Project Structure
+
+04 Navbar Component  —  Fixed Navigation Bar
+
+05 Hero Section  —  First Impression — Most Important
+
+06 About Section  —  Your Story & Background
+
+07 Skills Section  —  Tech Stack Visual Display
+
+08 Projects Section  —  Showcase Your Best Work
+
+09 Contact Section  —  Let Recruiters Reach You
+
+10 Dark / Light Mode  —  Theme Toggle Implementation
+
+11 Framer Motion Animations  —  Animation Patterns
+
+12 Deployment on Vercel  —  Go Live in Minutes
+
+13 Final Checklist  —  Before Sharing With Recruiters
+
+  PART 01
+
+Tech Stack
+
+Every technology chosen because it is what companies actually hire for in 2025.
+
+Framework
+
+Next.js 14
+(App Router)
+
+Industry-standard React framework with SSR & App Router.
+
+Styling
+
+Tailwind CSS v3
+
+Utility-first CSS for production-quality UIs, fast.
+
+Animation
+
+Framer Motion
+
+Used by top companies. Makes your portfolio feel alive.
+
+Dark Mode
+
+Next Themes
+
+One-line toggle with system preference detection.
+
+Icons
+
+React Icons
+
+Thousands of icons from all major icon libraries.
+
+Deploy
+
+Vercel
+
+One-click deploy, free SSL, global CDN included.
+
+Installation Commands
+
+Run these commands one by one in your terminal after creating the project.
+
+Terminal — Run in order
+
+  ● ● ●
+
+ 1  npx create-next-app@latest portfolio --typescript --tailwind --eslint --app
+
+ 2  cd portfolio
+
+ 3  npm install framer-motion
+
+ 4  npm install next-themes
+
+ 5  npm install react-icons
+
+ 6  npm run dev
+
+  PART 02
+
+Design System
+
+A consistent design system makes your portfolio look professional automatically. Follow these rules everywhere.
+
+Color Palette — Dark Mode
+
+Inspired by Vercel, Linear, and Notion — the design gold standard of 2025.
+
+HEX CODE
+
+NAME
+
+TOKEN
+
+PURPOSE
+
+#0F172A
+
+Background
+
+Slate 900
+
+Main page background
+
+#1E293B
+
+Card Background
+
+Slate 800
+
+Section & card backgrounds
+
+#6366F1
+
+Accent Primary
+
+Indigo 500
+
+Buttons, highlights, links
+
+#818CF8
+
+Accent Hover
+
+Indigo 400
+
+Hover states
+
+#E2E8F0
+
+Body Text
+
+Slate 200
+
+Main readable text
+
+#94A3B8
+
+Subtext
+
+Slate 400
+
+Descriptions, captions
+
+#334155
+
+Border
+
+Slate 700
+
+Card borders, dividers
+
+Color Palette — Light Mode
+
+#F8FAFC
+
+Background
+
+Slate 50
+
+Clean white background
+
+#FFFFFF
+
+Card Background
+
+White
+
+Cards and sections
+
+#4F46E5
+
+Accent Primary
+
+Indigo 600
+
+Buttons, highlights
+
+#6366F1
+
+Accent Hover
+
+Indigo 500
+
+Hover states
+
+#0F172A
+
+Body Text
+
+Slate 900
+
+Main readable text
+
+#64748B
+
+Subtext
+
+Slate 500
+
+Descriptions
+
+#E2E8F0
+
+Border
+
+Slate 200
+
+Card borders
+
+Typography
+
+Font:  Inter (Google Fonts)
+
+Hero / Name:  text-5xl → text-7xl  (48–72px)
+
+Section Headings:  text-3xl → text-4xl  (30–36px)
+
+Card Titles:  text-xl → text-2xl  (20–24px)
+
+Body Text:  text-base  (16px)
+
+Captions:  text-sm  (14px)
+
+Spacing Rules
+
+Between Sections:  py-20 / py-24  (80–96px)
+
+Between Cards:  gap-6 / gap-8  (24–32px)
+
+Inside Cards:  p-6  (24px all sides)
+
+Max Content Width:  max-w-6xl mx-auto
+
+Page Margins:  px-6  (24px horizontal)
+
+  PART 03
+
+Project Structure
+
+Professional-grade Next.js folder layout. Follow this exactly.
+
+Folder Structure
+
+  ● ● ●
+
+ 1  portfolio/
+
+ 2    ├── app/
+
+ 3    │   ├── layout.tsx          ← Root layout, font, theme provider
+
+ 4    │   ├── page.tsx            ← Home page (imports all sections)
+
+ 5    │   └── globals.css         ← Global styles & CSS variables
+
+ 6    ├── components/
+
+ 7    │   ├── Navbar.tsx          ← Fixed navigation bar
+
+ 8    │   ├── Hero.tsx            ← Section 1 — most important
+
+ 9    │   ├── About.tsx           ← Section 2
+
+10    │   ├── Skills.tsx          ← Section 3
+
+11    │   ├── Projects.tsx        ← Section 4 — recruiter priority
+
+12    │   ├── Contact.tsx         ← Section 5
+
+13    │   └── Footer.tsx          ← Bottom footer
+
+14    ├── data/
+
+15    │   ├── projects.ts         ← Project info (title, desc, links)
+
+16    │   └── skills.ts           ← Skills list with icons & colors
+
+17    ├── public/
+
+18    │   ├── profile.jpg         ← Your professional photo
+
+19    │   ├── Nayeem_CV.pdf       ← Your CV for download button
+
+20    │   └── projects/           ← Project screenshots (1280px width)
+
+21    ├── tailwind.config.ts
+
+22    └── package.json
+
+  PART 04
+
+Navbar Component
+
+Fixed at the top. Transparent on load, solid when scrolled. Dark/light toggle built-in.
+
+Your Name
+
+"Nayeem" in bold accent color
+
+Nav Links
+
+Home · About · Skills · Projects · Contact
+
+Dark Toggle
+
+Sun/moon icon — switches theme
+
+Scroll Effect
+
+Blur + shadow when page scrolls down
+
+File: components/Navbar.tsx
+
+  ● ● ●
+
+ 1  'use client'
+
+ 2  import { useState, useEffect } from 'react'
+
+ 3  import { useTheme } from 'next-themes'
+
+ 4  import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi'
+
+ 5
+
+ 6  const links = ['About', 'Skills', 'Projects', 'Contact']
+
+ 7
+
+ 8  export default function Navbar() {
+
+ 9    const [scrolled, setScrolled] = useState(false)
+
+10    const { theme, setTheme }     = useTheme()
+
+11
+
+12    useEffect(() => {
+
+13      const onScroll = () => setScrolled(window.scrollY > 50)
+
+14      window.addEventListener('scroll', onScroll)
+
+15      return () => window.removeEventListener('scroll', onScroll)
+
+16    }, [])
+
+17
+
+18    return (
+
+19      <nav className={`fixed top-0 w-full z-50 transition-all
+
+20        ${scrolled ? 'bg-slate-900/95 backdrop-blur shadow-lg' : 'bg-transparent'}`}>
+
+21        <div className='max-w-6xl mx-auto px-6 py-4 flex items-center justify-between'>
+
+22          <span className='text-accent font-bold text-xl'>Nayeem</span>
+
+23          {/* Nav links */}
+
+24          <ul className='hidden md:flex gap-8'>
+
+25            {links.map(l => (
+
+26              <li key={l}><a href={`#${l.toLowerCase()}`}
+
+27                className='text-text-sub hover:text-accent transition-colors'>{l}</a></li>
+
+28            ))}
+
+29          </ul>
+
+30          {/* Theme toggle */}
+
+31          <button onClick={() => setTheme(theme==='dark' ? 'light' : 'dark')}
+
+32            className='p-2 rounded-lg bg-bg-card'>
+
+33            {theme === 'dark' ? <FiSun size={18}/> : <FiMoon size={18}/>}
+
+34          </button>
+
+35        </div>
+
+36      </nav>
+
+37    )
+
+38  }
+
+  PART 05
+
+Hero Section — Most Important
+
+⚡  You have 3 seconds to impress a recruiter. Make it count.
+
+Greeting
+
+"Hello, I am" — small text in accent color above your name
+
+Name
+
+"MD. Jannatul Nayeem" — biggest text on the page (text-7xl)
+
+Typing Title
+
+"Frontend Dev" → "React Dev" → "MERN Stack Dev" — cycles automatically
+
+Description
+
+2-line bio — confident, clear, personal
+
+Two Buttons
+
+"View My Work" (accent fill) + "Download CV" (outlined border)
+
+Social Links
+
+GitHub + LinkedIn icons — always visible, always clickable
+
+Background
+
+Subtle animated gradient — indigo/purple glow, not distracting
+
+Install typing animation first:
+
+  ● ● ●
+
+ 1  npm install react-type-animation
+
+File: components/Hero.tsx
+
+  ● ● ●
+
+ 1  'use client'
+
+ 2  import { motion } from 'framer-motion'
+
+ 3  import { TypeAnimation } from 'react-type-animation'
+
+ 4  import { FiGithub, FiLinkedin } from 'react-icons/fi'
+
+ 5
+
+ 6  export default function Hero() {
+
+ 7    return (
+
+ 8      <section id='home' className='min-h-screen flex items-center justify-center
+
+ 9        bg-bg-dark relative overflow-hidden'>
+
+10
+
+11        {/* Animated gradient background */}
+
+12        <div className='absolute inset-0 bg-gradient-to-br
+
+13          from-indigo-900/20 via-transparent to-purple-900/20' />
+
+14
+
+15        <div className='relative z-10 text-center px-6 max-w-4xl mx-auto'>
+
+16          {/* Greeting */}
+
+17          <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}}
+
+18            className='text-accent text-lg font-medium mb-4 tracking-widest'>
+
+19            Hello, I am
+
+20          </motion.p>
+
+21
+
+22          {/* Name — BIGGEST element on page */}
+
+23          <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}}
+
+24            transition={{duration:0.6,delay:0.1}}
+
+25            className='text-5xl md:text-7xl font-bold text-white mb-6'>
+
+26            MD. Jannatul <span className='text-accent'>Nayeem</span>
+
+27          </motion.h1>
+
+28
+
+29          {/* Typing animation */}
+
+30          <TypeAnimation sequence={[
+
+31            'Frontend Developer',2000,'React.js Developer',2000,
+
+32            'MERN Stack Developer',2000,'Next.js Developer',2000,
+
+33          ]} wrapper='span' speed={50} repeat={Infinity}
+
+34            className='text-accent-lt font-semibold text-2xl md:text-3xl' />
+
+35
+
+36          {/* Buttons */}
+
+37          <div className='flex gap-4 justify-center flex-wrap mt-10 mb-8'>
+
+38            <a href='#projects'
+
+39              className='px-8 py-3 bg-accent hover:bg-accent-lt text-white
+
+40              font-semibold rounded-full transition-all hover:-translate-y-1'>
+
+41              View My Work
+
+42            </a>
+
+43            <a href='/Nayeem_CV.pdf' download
+
+44              className='px-8 py-3 border border-accent text-accent
+
+45              hover:bg-accent hover:text-white font-semibold rounded-full transition-all'>
+
+46              Download CV
+
+47            </a>
+
+48          </div>
+
+49        </div>
+
+50      </section>
+
+51    )
+
+52  }
+
+  ⚠  IMPORTANT:  Save your CV as Nayeem_CV.pdf and place it inside the /public folder. The Download CV button will not work without this.
+
+  PART 06
+
+About Section
+
+Recruiters want to know who you are beyond your skills. Keep it confident and genuine.
+
+Bio Text — Use This
+
+  "I am a Computer Science graduate from United International University (UIU), Dhaka. I love building things for the web — from clean UI components to full-stack applications. Currently focused on mastering the MERN Stack and Next.js to become a well-rounded developer. When I am not coding, I enjoy exploring new technologies and following the latest trends in web development."
+
+Info Cards (4 Quick Facts)
+
+Degree
+
+B.Sc. CSE
+
+University
+
+UIU, Dhaka
+
+Location
+
+Dhaka, Bangladesh
+
+Status
+
+🟢 Available for hire
+
+Layout (components/About.tsx)
+
+  ● ● ●
+
+ 1  // Photo — LEFT side (40% width) with glowing indigo border
+
+ 2  <motion.div initial={{opacity:0,x:-50}} whileInView={{opacity:1,x:0}}
+
+ 3    className='relative w-72 h-72 rounded-2xl overflow-hidden
+
+ 4    border-2 border-accent shadow-2xl shadow-indigo-500/20'>
+
+ 5    <Image src="/profile.jpg" alt="Nayeem" fill className="object-cover"/>
+
+ 6  </motion.div>
+
+ 7
+
+ 8  // Text — RIGHT side (60% width) with bio + 4 info cards
+
+ 9  <motion.div initial={{opacity:0,x:50}} whileInView={{opacity:1,x:0}}>
+
+10    <p className='text-text-sub text-lg leading-relaxed mb-8'>
+
+11      {bio}
+
+12    </p>
+
+13    <div className='grid grid-cols-2 gap-4'>
+
+14      {info.map(i => (<div key={i.label} className='bg-bg-card p-4 rounded-xl border border-slate-700'>
+
+15        <p className='text-accent text-sm font-semibold'>{i.label}</p>
+
+16        <p className='text-white font-medium mt-1'>{i.value}</p>
+
+17      </div>))}
+
+18    </div>
+
+19  </motion.div>
+
+  PART 07
+
+Skills Section
+
+Visual icon cards — not a boring list. Each skill gets a card with icon, name, and category.
+
+File: data/skills.ts
+
+  ● ● ●
+
+ 1  export const skills = [
+
+ 2    // ── Frontend ──────────────────────────────────────────────────
+
+ 3    { name: 'HTML5',       category: 'Frontend',  icon: 'FaHtml5',       color: '#E34F26' },
+
+ 4    { name: 'CSS3',        category: 'Frontend',  icon: 'FaCss3Alt',     color: '#1572B6' },
+
+ 5    { name: 'JavaScript',  category: 'Frontend',  icon: 'SiJavascript',  color: '#F7DF1E' },
+
+ 6    { name: 'React.js',    category: 'Frontend',  icon: 'FaReact',       color: '#61DAFB' },
+
+ 7    { name: 'Next.js',     category: 'Frontend',  icon: 'SiNextdotjs',   color: '#FFFFFF' },
+
+ 8    { name: 'Tailwind',    category: 'Frontend',  icon: 'SiTailwindcss', color: '#38BDF8' },
+
+ 9    // ── Backend (Learning) ─────────────────────────────────────────
+
+10    { name: 'Node.js',     category: 'Learning',  icon: 'FaNodeJs',      color: '#68A063' },
+
+11    { name: 'MongoDB',     category: 'Learning',  icon: 'SiMongodb',     color: '#4DB33D' },
+
+12    { name: 'Express.js',  category: 'Learning',  icon: 'SiExpress',     color: '#FFFFFF' },
+
+13    // ── Tools ──────────────────────────────────────────────────────
+
+14    { name: 'Git',         category: 'Tools',     icon: 'FaGitAlt',      color: '#F05032' },
+
+15    { name: 'GitHub',      category: 'Tools',     icon: 'FaGithub',      color: '#FFFFFF' },
+
+16    { name: 'VS Code',     category: 'Tools',     icon: 'SiVisualstudiocode', color: '#007ACC' },
+
+17  ]
+
+Skill Card Design Rules
+
+Card:  Dark background, subtle border — hover lifts with glow effect
+
+Icon:  Colored SVG icon at the top of each card
+
+Name:  Bold white text, centered
+
+Badge:  "Frontend" / "Learning" / "Tools" — colored badge at bottom
+
+Grid:  6 columns desktop  →  3 tablet  →  2 mobile
+
+Animation:  Stagger children — cards appear one by one (0.1s delay each)
+
+  PART 08
+
+Projects Section
+
+🎯  Most important section for getting hired.  Recruiters spend 60% of their time here.
+
+File: data/projects.ts
+
+  ● ● ●
+
+ 1  export const projects = [
+
+ 2    {
+
+ 3      id: 1,
+
+ 4      title: 'Hero.io — App Store Platform',
+
+ 5      description: 'Fully responsive multi-page app store with nested routing,
+
+ 6        interactive rating charts, and smooth user experience.',
+
+ 7      image: '/projects/hero-apps.png',
+
+ 8      tags: ['React', 'React Router', 'Tailwind', 'Recharts'],
+
+ 9      live: 'https://hero-apps-store.vercel.app',
+
+10      github: 'https://github.com/nayeemjannat',
+
+11      featured: true,
+
+12    },
+
+13    {
+
+14      id: 2,
+
+15      title: 'Customer Support Zone',
+
+16      description: 'Real-time ticket management dashboard. Agents process
+
+17        and resolve support tickets with live count tracking.',
+
+18      image: '/projects/support.png',
+
+19      tags: ['React', 'Tailwind', 'DaisyUI', 'State Management'],
+
+20      live: 'https://customer-support-zone-steel.vercel.app',
+
+21      github: 'https://github.com/nayeemjannat',
+
+22      featured: true,
+
+23    },
+
+24    {
+
+25      id: 3,
+
+26      title: 'MERN E-Commerce Platform',
+
+27      description: 'Full-stack e-commerce with auth, cart, admin panel,
+
+28        and AI-powered product recommendations (in progress).',
+
+29      tags: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT'],
+
+30      live: '',  github: 'https://github.com/nayeemjannat',
+
+31      featured: false,  inProgress: true,
+
+32    },
+
+33  ]
+
+Project Card Must-Haves
+
+Screenshot
+
+Top of card — 1280px width, full-page screenshot of your live site
+
+Tech Tags
+
+Colored pill badges — Indigo/Slate — shows stack at a glance
+
+Title
+
+Bold white project name — 1–2 lines max
+
+Description
+
+2 sentences max — what it does, not how you built it
+
+Buttons
+
+"Live Demo" (external link icon) + "Code" (GitHub icon)
+
+In Progress
+
+Orange "In Progress" badge for MERN project — shows active growth
+
+Hover
+
+Card lifts -8px with subtle glow — eye-catching, professional
+
+How to Take Project Screenshots
+
+Open your live project in Chrome
+
+Press F12 to open DevTools
+
+Click the Toggle Device button (mobile icon) — top left of DevTools
+
+Set width to 1280px
+
+Press Ctrl + Shift + P → type "screenshot" → click "Capture full size screenshot"
+
+Save as hero-apps.png, support.png etc. inside /public/projects/ folder
+
+  PART 09
+
+Contact Section
+
+Make it extremely easy for recruiters to reach you. Never make them search for your details.
+
+Your Contact Details
+
+Email
+
+mdjannatulnayeem001@gmail.com
+
+Phone
+
+01760797676
+
+LinkedIn
+
+linkedin.com/in/md-jannatul-nayeem-5750523a5
+
+GitHub
+
+github.com/nayeemjannat
+
+Location
+
+Dhaka, Bangladesh  —  Open to Remote
+
+EmailJS Setup (Free — No Backend Needed)
+
+Install
+
+  ● ● ●
+
+ 1  npm install @emailjs/browser
+
+Go to emailjs.com and create a free account
+
+Add a new Email Service — connect your Gmail account
+
+Create an Email Template — note the template ID
+
+Copy your Service ID, Template ID, and Public Key
+
+Add these 3 values to your .env.local file (never commit to GitHub)
+
+Use emailjs.sendForm() inside your form onSubmit handler
+
+  PART 10
+
+Dark / Light Mode
+
+File: app/layout.tsx — Theme Provider
+
+  ● ● ●
+
+ 1  import { ThemeProvider } from 'next-themes'
+
+ 2  import { Inter } from 'next/font/google'
+
+ 3  import './globals.css'
+
+ 4  import Navbar from '@/components/Navbar'
+
+ 5
+
+ 6  const inter = Inter({ subsets: ['latin'] })
+
+ 7
+
+ 8  export default function RootLayout({ children }) {
+
+ 9    return (
+
+10      <html lang='en' suppressHydrationWarning>
+
+11        <body className={inter.className}>
+
+12          <ThemeProvider attribute='class' defaultTheme='dark' enableSystem={false}>
+
+13            <Navbar />
+
+14            <main>{children}</main>
+
+15          </ThemeProvider>
+
+16        </body>
+
+17      </html>
+
+18    )
+
+19  }
+
+File: app/globals.css — CSS Variables
+
+  ● ● ●
+
+ 1  @tailwind base;
+
+ 2  @tailwind components;
+
+ 3  @tailwind utilities;
+
+ 4
+
+ 5  :root {
+
+ 6    --bg-primary:   #F8FAFC;
+
+ 7    --text-primary: #0F172A;
+
+ 8  }
+
+ 9
+
+10  .dark {
+
+11    --bg-primary:   #0F172A;
+
+12    --text-primary: #E2E8F0;
+
+13  }
+
+  PART 11
+
+Framer Motion Animations
+
+Use these 4 patterns throughout. Never mix more than 2 on a single component.
+
+Pattern 1 — Fade Up   Most Used
+
+Use on section headings, cards, and text. Elements fade in while sliding up.
+
+Pattern 2 — Stagger   Card Grids
+
+Multiple cards appear one by one with 0.1s delay. Looks very polished.
+
+Pattern 3 — Hover Lift   Cards
+
+Card lifts -8px on hover with subtle glow. Use on project and skill cards.
+
+Pattern 4 — Slide In   About Section
+
+Photo from left, text from right. Creates great visual tension.
+
+  ● ● ●
+
+ 1  // Pattern 1 — Fade Up
+
+ 2  <motion.div
+
+ 3    initial={{ opacity: 0, y: 40 }}
+
+ 4    whileInView={{ opacity: 1, y: 0 }}
+
+ 5    transition={{ duration: 0.5 }}
+
+ 6    viewport={{ once: true }}>
+
+ 7    {/* content */}
+
+ 8  </motion.div>
+
+ 9
+
+10  // Pattern 2 — Stagger (parent)
+
+11  const container = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } }
+
+12  const item = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }
+
+13  <motion.div variants={container} initial="hidden" whileInView="show">
+
+14    {projects.map(p => <motion.div key={p.id} variants={item}>{/* card */}</motion.div>)}
+
+15  </motion.div>
+
+16
+
+17  // Pattern 3 — Hover Lift
+
+18  <motion.div
+
+19    whileHover={{ y: -8, scale: 1.02 }}
+
+20    transition={{ duration: 0.2 }}>
+
+21    {/* card content */}
+
+22  </motion.div>
+
+23
+
+24  // Pattern 4 — Slide In (About)
+
+25  <motion.div initial={{x:-60,opacity:0}} whileInView={{x:0,opacity:1}}>photo</motion.div>
+
+26  <motion.div initial={{x:60,opacity:0}}  whileInView={{x:0,opacity:1}}>text</motion.div>
+
+  PART 12
+
+Deploy on Vercel
+
+From code to live URL in under 5 minutes. Completely free.
+
+01
+
+Go to github.com → Create new repository called "portfolio" (public)
+
+02
+
+Run:  git init → git add . → git commit -m "init" → git push
+
+03
+
+Go to vercel.com → Sign in with your GitHub account
+
+04
+
+Click "New Project" → Import your portfolio repository
+
+05
+
+Leave ALL settings as default → Click Deploy
+
+06
+
+Wait 1–2 minutes → Your site is live at username.vercel.app
+
+07
+
+(Optional) Add a custom domain in Settings → Domains (e.g. nayeemdev.com)
+
+  💡  After deployment, add your Vercel URL to:  CV  ·  LinkedIn profile  ·  GitHub bio  ·  email signature
+
+  PART 13
+
+Final Checklist
+
+Go through every item before sending your portfolio link to any recruiter.
+
+📋  Content Checklist
+
+✓  Hero section has your correct name, title, and working CV download button
+
+✓  About section has a real professional photo (not a placeholder)
+
+✓  Skills section shows your actual current tech stack
+
+✓  Projects have correct live links that actually open and work
+
+✓  Projects have correct GitHub links to your actual repositories
+
+✓  Contact section has correct email and phone number
+
+✓  GitHub and LinkedIn links go to your actual profiles
+
+✓  No placeholder text — every "[brackets]" section filled in
+
+⚙️  Technical Checklist
+
+✓  Site loads correctly on mobile (test on your phone)
+
+✓  Dark mode toggle switches properly with no flash
+
+✓  All animations are smooth — not laggy or stuttering
+
+✓  No broken images — every image loads correctly
+
+✓  No console errors (F12 → Console tab in Chrome)
+
+✓  Page title shows "Nayeem — Frontend Developer" in browser tab
+
+✓  Meta description is set for search engine visibility
+
+✓  Site loads fast — Lighthouse score above 90
+
+After Deployment — Visibility Steps
+
+✓  Update your LinkedIn profile with the portfolio link (edit the "Website" field)
+
+✓  Update your CV PDF — replace any placeholder with the live Vercel URL
+
+✓  Add the portfolio URL to your GitHub profile bio
+
+✓  Post on LinkedIn: "Just launched my portfolio!" + link — this gets visibility
+
+You are now ready to build a portfolio that gets you hired.
+
+Build it section by section. Do not rush. Quality over speed.
+
+MD. Jannatul Nayeem  ·  2025
