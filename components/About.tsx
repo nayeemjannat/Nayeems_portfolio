@@ -4,9 +4,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function About() {
-  const bio =
-    'I am a Computer Science graduate from United International University (UIU), Dhaka. I love building things for the web — from clean, interactive UI components to robust full-stack applications. Currently, I am focused on mastering the MERN Stack and Next.js to become a well-rounded developer. When I am not coding, I enjoy exploring new technologies, contributing to open-source, and following the latest trends in web development.'
-
   const info = [
     { label: 'Degree', value: 'B.Sc. in CSE' },
     { label: 'University', value: 'UIU, Dhaka' },
@@ -50,7 +47,7 @@ export default function About() {
             <div className="relative group w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-4 border-accent p-2 shadow-2xl shadow-accent/20 transition-all duration-300 hover:scale-[1.02]">
               <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <Image
-                  src="/profile.png"
+                  src="/nayeem-profile-2026.png"
                   alt="MD. Jannatul Nayeem Profile"
                   fill
                   sizes="(max-w-768px) 100vw, 384px"
@@ -73,9 +70,17 @@ export default function About() {
             <h3 className="text-2xl sm:text-3xl font-extrabold text-text-main mb-6">
               Who is Jannatul Nayeem?
             </h3>
-            <p className="text-lg sm:text-xl text-text-sub leading-relaxed mb-8 font-medium">
-              {bio}
-            </p>
+            <div className="text-lg sm:text-xl text-text-sub leading-relaxed mb-8 font-medium space-y-4">
+              <p>
+                I turn ideas into digital experiences, blending creative design with the power of technology.
+              </p>
+              <p>
+                From crafting intuitive interfaces to building full-stack applications, I enjoy transforming complex ideas into seamless, meaningful solutions using modern web technologies.
+              </p>
+              <p className="font-bold text-text-main">
+                Driven by curiosity. Inspired by creativity. Built to make an impact.
+              </p>
+            </div>
 
             {/* Info Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

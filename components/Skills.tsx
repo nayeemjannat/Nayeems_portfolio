@@ -22,7 +22,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; color?: strin
   VscVscode,
 }
 
-const categories = ['Frontend', 'Learning', 'Tools'] as const
+const categories = ['Frontend', 'Backend', 'Tools'] as const
 
 export default function Skills() {
   const containerVariants = {
@@ -69,8 +69,8 @@ export default function Skills() {
             const titleLabel =
               category === 'Frontend'
                 ? 'Frontend Core'
-                : category === 'Learning'
-                ? 'Learning / Backend'
+                : category === 'Backend'
+                ? 'Backend'
                 : 'Tools & Ecosystem'
 
             return (
@@ -125,7 +125,7 @@ export default function Skills() {
                           className={`text-xs font-extrabold px-3 py-1 rounded-full mt-3 uppercase tracking-wider ${
                             skill.category === 'Frontend'
                               ? 'bg-blue-500/10 text-blue-500'
-                              : skill.category === 'Learning'
+                              : skill.category === 'Backend'
                               ? 'bg-amber-500/10 text-amber-500'
                               : 'bg-emerald-500/10 text-emerald-500'
                           }`}

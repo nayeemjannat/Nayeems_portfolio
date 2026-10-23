@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'
+import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null)
@@ -140,32 +140,6 @@ export default function Contact() {
               })}
             </div>
 
-            {/* Profiles links */}
-            <div className="pt-6 border-t border-border-custom/50">
-              <p className="text-base font-bold text-text-sub uppercase tracking-wider mb-4">
-                Social Profiles
-              </p>
-              <div className="flex gap-4">
-                <a
-                  href="https://github.com/nayeemjannat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 rounded-2xl bg-bg-card border border-border-custom text-text-sub hover:text-accent hover:border-accent hover:-translate-y-1 transition-all duration-200 shadow-md"
-                  aria-label="GitHub Profile"
-                >
-                  <FiGithub size={22} />
-                </a>
-                <a
-                  href="https://linkedin.com/in/md-jannatul-nayeem-5750523a5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 rounded-2xl bg-bg-card border border-border-custom text-text-sub hover:text-accent hover:border-accent hover:-translate-y-1 transition-all duration-200 shadow-md"
-                  aria-label="LinkedIn Profile"
-                >
-                  <FiLinkedin size={22} />
-                </a>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right Column: EmailJS Contact Form */}

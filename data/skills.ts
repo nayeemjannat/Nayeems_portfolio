@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  category: 'Frontend' | 'Learning' | 'Tools';
+  category: 'Frontend' | 'Backend' | 'Tools';
   icon: string;
   color: string;
 }
@@ -14,10 +14,10 @@ export const skills: Skill[] = [
   { name: 'Next.js',     category: 'Frontend',  icon: 'SiNextdotjs',   color: '#FFFFFF' },
   { name: 'Tailwind',    category: 'Frontend',  icon: 'SiTailwindcss', color: '#38BDF8' },
 
-  // ── Backend (Learning) ─────────────────────────────────────────
-  { name: 'Node.js',     category: 'Learning',  icon: 'FaNodeJs',      color: '#68A063' },
-  { name: 'MongoDB',     category: 'Learning',  icon: 'SiMongodb',     color: '#4DB33D' },
-  { name: 'Express.js',  category: 'Learning',  icon: 'SiExpress',     color: '#A0A0A0' },
+  // ── Backend ─────────────────────────────────────────────────────
+  { name: 'Node.js',     category: 'Backend',   icon: 'FaNodeJs',      color: '#68A063' },
+  { name: 'MongoDB',     category: 'Backend',   icon: 'SiMongodb',     color: '#4DB33D' },
+  { name: 'Express.js',  category: 'Backend',   icon: 'SiExpress',     color: '#A0A0A0' },
 
   // ── Tools ──────────────────────────────────────────────────────
   { name: 'Git',         category: 'Tools',     icon: 'FaGitAlt',      color: '#F05032' },
