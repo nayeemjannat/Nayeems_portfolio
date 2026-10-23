@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF6FF"/>
+      <stop offset="1" stop-color="#F5F3FF"/>
+    </linearGradient>
+    <linearGradient id="header" x1="188" y1="106" x2="1012" y2="241" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#6D28D9"/>
+    </linearGradient>
+    <filter id="shadow" x="123" y="73" width="954" height="554" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1E3A8A" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v675H0z"/>
+  <circle cx="1080" cy="70" r="190" fill="#DDD6FE" opacity=".55"/>
+  <circle cx="120" cy="620" r="170" fill="#BFDBFE" opacity=".45"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="100" width="900" height="475" rx="24" fill="#fff"/>
+    <path d="M174 100h852a24 24 0 0 1 24 24v112H150V124a24 24 0 0 1 24-24Z" fill="url(#header)"/>
+    <circle cx="600" cy="154" r="32" fill="#fff" fill-opacity=".17"/>
+    <path d="M600 132 618 139v14c0 15-10 26-18 30-8-4-18-15-18-30v-14l18-7Z" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m592 153 6 6 11-13" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="600" y="207" fill="#fff" font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle">SmartShop</text>
+    <text x="600" y="229" fill="#DBEAFE" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">ORDER MANAGEMENT · FRAUD DETECTION</text>
+    <text x="190" y="270" fill="#172554" font-family="Arial,sans-serif" font-size="20" font-weight="700">Order security overview</text>
+    <text x="190" y="292" fill="#64748B" font-family="Arial,sans-serif" font-size="12">Monitor orders and review suspicious activity</text>
+    <rect x="190" y="312" width="238" height="91" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <rect x="444" y="312" width="238" height="91" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <rect x="698" y="312" width="312" height="91" rx="14" fill="#FFF7ED" stroke="#FED7AA"/>
+    <circle cx="222" cy="343" r="15" fill="#DBEAFE"/>
+    <path d="M215 341h14v11h-14zM215 337h14" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+    <text x="248" y="344" fill="#64748B" font-family="Arial,sans-serif" font-size="12">ORDERS TODAY</text>
+    <text x="214" y="382" fill="#0F172A" font-family="Arial,sans-serif" font-size="27" font-weight="700">1,284</text>
+    <circle cx="476" cy="343" r="15" fill="#DCFCE7"/>
+    <path d="m469 343 5 5 9-11" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="502" y="344" fill="#64748B" font-family="Arial,sans-serif" font-size="12">VERIFIED ORDERS</text>
+    <text x="468" y="382" fill="#0F172A" font-family="Arial,sans-serif" font-size="27" font-weight="700">1,197</text>
+    <circle cx="730" cy="343" r="15" fill="#FFEDD5"/>
+    <path d="M730 334v11m0 5v.5" stroke="#EA580C" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="756" y="344" fill="#9A3412" font-family="Arial,sans-serif" font-size="12">NEEDS REVIEW</text>
+    <text x="722" y="382" fill="#9A3412" font-family="Arial,sans-serif" font-size="27" font-weight="700">12 flagged orders</text>
+    <text x="190" y="438" fill="#172554" font-family="Arial,sans-serif" font-size="15" font-weight="700">Recent order checks</text>
+    <rect x="190" y="453" width="820" height="38" rx="8" fill="#F8FAFC"/>
+    <text x="210" y="477" fill="#64748B" font-family="Arial,sans-serif" font-size="11" font-weight="700">ORDER</text>
+    <text x="390" y="477" fill="#64748B" font-family="Arial,sans-serif" font-size="11" font-weight="700">CUSTOMER</text>
+    <text x="640" y="477" fill="#64748B" font-family="Arial,sans-serif" font-size="11" font-weight="700">RISK CHECK</text>
+    <text x="860" y="477" fill="#64748B" font-family="Arial,sans-serif" font-size="11" font-weight="700">STATUS</text>
+    <path d="M190 501h820" stroke="#E2E8F0"/>
+    <text x="210" y="527" fill="#334155" font-family="Arial,sans-serif" font-size="12">#SW-2048</text>
+    <text x="390" y="527" fill="#334155" font-family="Arial,sans-serif" font-size="12">Customer account</text>
+    <rect x="640" y="512" width="88" height="22" rx="11" fill="#DCFCE7"/>
+    <text x="684" y="527" fill="#15803D" font-family="Arial,sans-serif" font-size="11" font-weight="700" text-anchor="middle">Low risk</text>
+    <circle cx="872" cy="523" r="5" fill="#22C55E"/>
+    <text x="885" y="527" fill="#15803D" font-family="Arial,sans-serif" font-size="12" font-weight="700">Verified</text>
+    <path d="M190 543h820" stroke="#E2E8F0"/>
+  </g>
+</svg>
